@@ -23,6 +23,8 @@ mongoose.Promise = global.Promise;
 const db = mongoose.connection
 
 // set up our express application
+app.use(express.static('public'));
+app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms

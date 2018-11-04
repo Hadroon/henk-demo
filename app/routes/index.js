@@ -11,8 +11,13 @@ require('../controllers/passport.js')(passport); // pass passport for configurat
 // =====================================
 router.get('/', function (req, res) {
 
-    res.render('index.ejs'); // load the index.ejs file
+    // res.render('index.ejs',  {
+    //     user: req.user
+    // }); // load the index.ejs file
 
+    res.render('index.ejs', {
+        user: req.user // get the user out of session and pass to template
+    });
     // console.log(req.user);
 
     // if (req.user) {

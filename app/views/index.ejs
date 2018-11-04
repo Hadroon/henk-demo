@@ -3,34 +3,149 @@
 <html>
 
 <head>
-    <title>Node Authentication</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <!-- load fontawesome -->
-    <style>
-        body {
-            padding-top: 80px;
-        }
-    </style>
+  <title>Henkel</title>
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
+  <!-- load bootstrap css -->
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> -->
+  <!-- load fontawesome -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> -->
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="container">
-
-
-                <div class="jumbotron text-center">
-
-                    <h1>Demo promo</h1>
-
-                    <p>Lépj be vagy regisztrálj:</p>
-
-                    <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Belépés</a>
-                    <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Regisztráció</a>
-                    <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
-                </div>
-
+  <div class="wrapper">
+    <div class="header">
+      <a href="/#forms" style="float:left;">
+        <img style="max-width: 200px; margin-top: 4px;" src="/images/ap.jpg" alt="">
+      </a>
+      <div class="nav">
+        <a href="">Játékleírás</a>
+        <a href="">Nyeremények</a>
+        <a href="">Játékszabályzat</a>
+      </div>
     </div>
+    <div class="content">
+      <div class="relative">
+        <img src="/images/head.jpg" alt="">
+        <img class="separator" src="/images/separator.png" alt="">
+      </div>
+      <div class="relative">
+        <img src="/images/folyamat_2.jpg" alt="">
+        <img class="separator" src="/images/separator.png" alt="">
+      </div>
+      <div id="forms" class="anchor"></div>
+      <div class="relative">
+        <% if (user) { %>
+        <div id="logic">
+          <div class="left">
+
+
+          </div>
+          <div></div>
+        </div>
+        <% }  else { %>
+        <div id="logic" class="grid-forms">
+          <div class="left">
+            <h1 style="text-align: center;">Regisztráció</h1>
+            <form id="target" action="destination.html">
+              <table style="width:100%">
+                <tr>
+                  <td>
+                    <legend>Vezetéknév:</legend>
+                    <input type="text" value="">
+                  </td>
+                  <td>
+                    <legend>Keresztnév:</legend>
+                    <input type="text" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <legend>Irányítószám:</legend>
+                    <input type="text" value="">
+                  </td>
+                  <td>
+                    <legend>Település:</legend>
+                    <input type="text" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <legend>Utca:</legend>
+                    <input type="text" value="">
+                  </td>
+                  <td>
+                    <legend>Házszám:</legend>
+                    <input type="text" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <legend>Telefon:</legend>
+                    <span>+36 </span><input style="width: 80%;" type="text" value="">
+                  </td>
+                  <td>
+                    <legend>Email:</legend>
+                    <input type="text" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <legend>Jelszó:</legend>
+                    <input type="text" value="">
+                  </td>
+                  <td>
+                    <legend>Jelszó megerősítése:</legend>
+                    <input type="text" value="">
+                  </td>
+                </tr>
+              </table>
+              <p><input type="checkbox" name="eula" value="1"> Elolvastam és elfogadom a <a href="#">Szabályzatot</a>,
+                valamint az <a href="#">Adatvédelmi tájékoztatót</a>.</p>
+              <p><input type="checkbox" name="gdpr" value="1"> Nyilatokzom, hogy elmúltam 18 éves.</p>
+              <div style="align-items: center;">
+                <input style="margin: 0px auto" type="submit" value="Regisztrálok">
+              </div>
+            </form>
+          </div>
+          <div class="right">
+            <h1 style="text-align: center;">Belépés</h1>
+            <form action="/login" method="post">
+              <div class="form-group">
+                <legend>Email</legend>
+                <input type="text" class="form-control" name="email">
+              </div>
+              <div class="form-group">
+                <legend>Jelszó</legend>
+                <input type="password" class="form-control" name="password">
+              </div>
+              <button style="item-align: center;" type="submit" class="btn btn-warning btn-lg">Belépés</button>
+            </form>
+            <p><a href="/forgot">Elfelejtett jelszó</a></p>
+          </div>
+        </div>
+        <% } %>
+        <!-- <div style="clear: both;"> </div> -->
+      </div>
+      <div class="relative">
+        <img class="separator-upper" src="/images/separator.png" alt="">
+        <img src="/images/nyeremenyek_3.jpg" alt="">
+        <img class="separator" src="/images/separator.png" alt="">
+      </div>
+
+      <div>4</div>
+      <div>5</div>
+      <div class="box footer">Footer</div>
+    </div>
+  </div>
+
+
 </body>
+<!-- <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Belépés</a>
+<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Regisztráció</a>
+<a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a> -->
 
 </html>
