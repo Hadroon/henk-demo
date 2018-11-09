@@ -50,6 +50,8 @@ module.exports = function (passport) {
     },
         function (req, email, password, done) {
 
+            console.log('singup req');
+            console.log(req);
             var regexPatt = new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
             var isValidEmail = regexPatt.test(email);
             if (!isValidEmail) {

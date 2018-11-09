@@ -1,0 +1,4 @@
+binding:
+
+    <input type="text" v-model="propertyName">
+    {{ propertyName}}
