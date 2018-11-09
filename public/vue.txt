@@ -2,3 +2,12 @@ binding:
 
     <input type="text" v-model="propertyName">
     {{ propertyName}}
+
+attr options: 
+    v-for === loop
+    v-model === input default value
+    v-text === set the value of 
+
+event lisener:
+    v-on:click="methodName"
+    @click="methodName" like above
